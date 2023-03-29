@@ -18,7 +18,6 @@ const prisma = new PrismaClient({
     },
   },
 });
-console.log(process.env.DATABASE_URL_PROD);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
