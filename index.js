@@ -13,11 +13,12 @@ const prisma = new PrismaClient({
   datasources: {
     db: {
       url: isProduction
-        ? process.env.DATABASE_URL_PROD
-        : process.env.DATABASE_URL_DEV,
+        ? `${process.env.DATABASE_URL_PROD}`
+        : `${process.env.DATABASE_URL_DEV}`,
     },
   },
 });
+console.log(process.env.DATABASE_URL_PROD);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
